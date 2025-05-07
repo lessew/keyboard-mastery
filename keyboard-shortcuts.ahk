@@ -2,6 +2,7 @@
 
 ; Get computer name
 computerName := A_ComputerName
+MsgBox "Current computer name: " . computerName
 
 ; Define paths based on computer
 if (computerName = "WINNIE") {
