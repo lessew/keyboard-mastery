@@ -1,5 +1,27 @@
 #Requires AutoHotkey v2.0
 
+; Get computer name
+computerName := A_ComputerName
+
+; Define paths based on computer
+if (computerName = "WINNIE") {
+    ; Paths for Wessel's computer
+    FirefoxPath := "C:\Program Files\Mozilla Firefox\firefox.exe"
+    CursorPath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    ChromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    TelegramPath := "C:\Users\mail\AppData\Roaming\Telegram Desktop\Telegram.exe"
+    TerminalPath := "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.22.11141.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+    ObsidianPath := "C:\Users\Wessel.Heringa\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Obsidian.lnk"
+} else {
+    ; Paths for dnz's computer
+    FirefoxPath := "C:\Program Files\Mozilla Firefox\firefox.exe"  ; Verify path
+    CursorPath := "C:\Program Files\Google\Chrome\Application\chrome.exe"  ; Verify path
+    ChromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"  ; Verify path
+    TelegramPath := "C:\Users\dnz\AppData\Roaming\Telegram Desktop\Telegram.exe"  ; Update username
+    TerminalPath := "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_*\WindowsTerminal.exe"  ; Update version
+    ObsidianPath := "C:\Users\dnz\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Obsidian.lnk"  ; Update username
+}
+
 ; Generic function to create keyboard shortcuts
 CreateShortcut(winTitle, programPath) {
     SetTitleMatchMode "2"
@@ -16,12 +38,12 @@ CreateShortcut(winTitle, programPath) {
 }
 
 ; Application shortcuts
-#f:: CreateShortcut("Firefox", "C:\Program Files\Mozilla Firefox\firefox.exe")
-#a:: CreateShortcut("Cursor", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-#c:: CreateShortcut("Chrome", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-#t:: CreateShortcut("Telegram", "C:\Users\mail\AppData\Roaming\Telegram Desktop\Telegram.exe")
-#b:: CreateShortcut("wessel@winnie", "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.22.11141.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
-#o:: CreateShortcut("Obsidian", "C:\Users\Wessel.Heringa\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Obsidian.lnk")
+#f:: CreateShortcut("Firefox", FirefoxPath)
+#a:: CreateShortcut("Cursor", CursorPath)
+#c:: CreateShortcut("Chrome", ChromePath)
+#t:: CreateShortcut("Telegram", TelegramPath)
+#b:: CreateShortcut("wessel@winnie", TerminalPath)
+#o:: CreateShortcut("Obsidian", ObsidianPath)
 
 ; Notepad shortcut (special case as it doesn't need a specific path)
 #h:: {
