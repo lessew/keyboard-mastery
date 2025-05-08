@@ -14,13 +14,13 @@ if (computerName = "WINNIE") {
     TerminalPath := "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.22.11141.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
     ObsidianPath := "C:\Users\Wessel.Heringa\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Obsidian.lnk"
 } else {
-    ; Paths for dnz's computer
-    FirefoxPath := "C:\Program Files\Mozilla Firefox\firefox.exe"  ; Verify path
-    CursorPath := "C:\Program Files\Google\Chrome\Application\chrome.exe"  ; Verify path
-    ChromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"  ; Verify path
-    TelegramPath := "C:\Users\dnz\AppData\Roaming\Telegram Desktop\Telegram.exe"  ; Update username
-    TerminalPath := "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_*\WindowsTerminal.exe"  ; Update version
-    ObsidianPath := "C:\Users\dnz\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Obsidian.lnk"  ; Update username
+    ; Paths for dnz's computer L10075
+    FirefoxPath := "C:\Program Files\Mozilla Firefox\Firefox.exe" 
+    CursorPath := "C:\Program Files\Google\Chrome\Application\chrome.exe"  
+    ChromePath := "C:\Program Files\Google\Chrome\Application\Chrome.exe" 
+    TelegramPath := "C:\Users\Wessel.Heringa\Documents\Telegram\Telegram.exe"  
+    TerminalPath := "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_*\WindowsTerminal.exe"  
+    ObsidianPath := "C:\Users\Wessel.Heringa\AppData\Local\Programs\Obsidian\Obsidian.exe"  
 }
 
 ; Generic function to create keyboard shortcuts
@@ -43,7 +43,7 @@ CreateShortcut(winTitle, programPath) {
 #a:: CreateShortcut("Cursor", CursorPath)
 #c:: CreateShortcut("Chrome", ChromePath)
 #t:: CreateShortcut("Telegram", TelegramPath)
-#b:: CreateShortcut("wessel@winnie", TerminalPath)
+#b:: CreateShortcut("wessel@L10075", TerminalPath)
 #o:: CreateShortcut("Obsidian", ObsidianPath)
 
 ; Notepad shortcut (special case as it doesn't need a specific path)
