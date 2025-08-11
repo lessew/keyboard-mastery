@@ -43,13 +43,13 @@ CreateShortcut(winTitle, programPath) {
 }
 
 ; Application shortcuts
-#f:: CreateShortcut("Firefox", FirefoxPath)
+>#f:: CreateShortcut("Firefox", FirefoxPath)
 #a:: CreateShortcut("Cursor", CursorPath)
-#c:: CreateShortcut("Chrome", ChromePath)
->#t:: CreateShortcut("Todoist", TodoistPath)
-#b:: CreateShortcut("wessel@L10075", TerminalPath)
->#o:: CreateShortcut("Obsidian", ObsidianPath)
->#v:: CreateShortcut("Vivaldi", VivaldiPath)
+>#c:: CreateShortcut("Chrome", ChromePath)
+>#i:: CreateShortcut("Todoist", TodoistPath)
+>#b:: CreateShortcut("wessel@L10075", TerminalPath)
+>#j:: CreateShortcut("Obsidian", ObsidianPath)
+>#d:: CreateShortcut("Vivaldi", VivaldiPath)
 
 ; Notepad shortcut (special case as it doesn't need a specific path)
 #h:: {
