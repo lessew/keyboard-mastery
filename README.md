@@ -7,6 +7,8 @@
 - [x] todo: recognize chrome browsers indepentently
 - log: sudo tail -f /var/log/syslog | grep focus
 - [ ] todo: window title gives errorneours behaviour, eg when image is opened in  vivaldi. use pid instead or other workaround
+     - vivaldi issues fixes this (window name borked when open tab is an image)
+     - todoist issues fixes this (window name inbox/now/etc in wmctrl)
 
 # other
      use screenkey on ubuntu to see keystrokes

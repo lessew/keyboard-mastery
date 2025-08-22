@@ -65,7 +65,7 @@ launch_program() {
             vivaldi.vivaldi-stable &
             ;;
         "todoist")
-            todoist &
+            /home/wesselheringa/Applications/Todoist-linux-9.19.0-x86_64-latest.AppImage  &
             ;;
         *)
             # Try to launch the program directly
