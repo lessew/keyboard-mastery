@@ -6,16 +6,28 @@
 
 app_is_running() {
     local window_title="$1"
+    local match_pattern="$1"
+
+    case "$window_title" in
+        "chrome")
+            match_pattern="google-chrome" 
+            ;;
+        *)
+            match_pattern="$window_title"
+            ;;
+    esac
     
     #local pid=$(pgrep -f "$window_title")
-    local pid=$(ps -ef | grep "$window_title" | grep -v grep | grep -v "focus_or_launch.sh")
-     echo "Debug: pgrep found PID: '$pid' for '$window_title'"
+    local pid=$(ps -ef | grep "$match_pattern" | grep -v grep | grep -v "focus_or_launch.sh")
+    logger "focus_or_launch: Debug - pgrep found PID: '$pid' for '$window_title'"
     [ -n "$pid" ]
 }
 
 focus_window() {
     local window_title="$1"
-    wmctrl -a "$window_title" 
+    #wmctrl -a "$window_title" 
+    #wmctrl -r "$window_title" -b toggle,fullscreen
+    wmctrl -r "$window_title" -b add,maximized_verti,maximized_horz
 }
 
 launch_program() {
@@ -26,7 +38,7 @@ launch_program() {
         "firefox")
             firefox &
             ;;
-        "chrome"|"google-chrome")
+        "chrome")
             google-chrome &
             ;;
         "cursor")
@@ -41,8 +53,8 @@ launch_program() {
         "obsidian")
             obsidian &
             ;;
-        "vivaldi")
-            vivaldi &
+        "vivaldi") # in /snap/bin 
+            vivaldi.vivaldi-stable &
             ;;
         "todoist")
             todoist &
@@ -56,9 +68,9 @@ launch_program() {
 
 # Main function
 main() {
-    echo "=== Focus or Launch Script ==="
-    echo "Arguments received: $#"
-    echo "All arguments: $@"
+    logger "focus_or_launch: === Script started ==="
+    logger "focus_or_launch: Arguments received: $#"
+    logger "focus_or_launch: All arguments: $@"
     
     if [ $# -eq 0 ]; then
         echo "Usage: $0 <program_name>"
@@ -74,14 +86,14 @@ main() {
     local window_title="$1"
     
     if app_is_running "$window_title"; then
-        echo "App is running, focusing window..."
+        logger "focus_or_launch: App is running, focusing window..."
         focus_window "$window_title"
     else
-        echo "App is not running, launching..."
+        logger "focus_or_launch: App is not running, launching..."
         launch_program "$window_title"
     fi
     
-    echo "=== Script completed ==="
+    logger "focus_or_launch: === Script completed ==="
 }
 
 # Run the main function with all arguments

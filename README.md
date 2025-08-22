@@ -5,4 +5,6 @@
 
 # ubuntu script
 - only works on X11 due to wctrl script being used
-- todo: recognize chrome browsers indepentently
+- [x] todo: recognize chrome browsers indepentently
+- log: sudo tail -f /var/log/syslog | grep focus
+
