@@ -12,6 +12,9 @@ app_is_running() {
         "chrome")
             match_pattern="google-chrome" 
             ;;
+        "terminal")
+            match_pattern="gnome-terminal"
+            ;;
         *)
             match_pattern="$window_title"
             ;;
@@ -25,9 +28,14 @@ app_is_running() {
 
 focus_window() {
     local window_title="$1"
-    #wmctrl -a "$window_title" 
-    #wmctrl -r "$window_title" -b toggle,fullscreen
-    wmctrl -r "$window_title" -b add,maximized_verti,maximized_horz
+
+    if [ "$window_title" == "gnome-terminal" ]; then
+        wmctrl -xFa gnome-terminal-server.Gnome-terminal
+    else
+        wmctrl -a "$window_title" 
+        #wmctrl -r "$window_title" -b toggle,fullscreen
+        wmctrl -r "$window_title" -b add,maximized_verti,maximized_horz
+    fi
 }
 
 launch_program() {
@@ -86,10 +94,10 @@ main() {
     local window_title="$1"
     
     if app_is_running "$window_title"; then
-        logger "focus_or_launch: App is running, focusing window..."
+        logger "focus_or_launch: App $window_title is running, focusing window..."
         focus_window "$window_title"
     else
-        logger "focus_or_launch: App is not running, launching..."
+        logger "focus_or_launch: App $window_title is not running, launching..."
         launch_program "$window_title"
     fi
     
