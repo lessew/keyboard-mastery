@@ -29,7 +29,7 @@ app_is_running() {
 focus_window() {
     local window_title="$1"
 
-    if [ "$window_title" == "gnome-terminal" ]; then
+    if [ "$window_title" == "gnome-terminal" ]; then #https://www.reddit.com/r/linuxquestions/comments/pxv21n/shortcut_to_navigate_to_open_terminal/
         wmctrl -xFa gnome-terminal-server.Gnome-terminal
     else
         wmctrl -a "$window_title" 
