@@ -32,7 +32,7 @@ focus_window() {
     if [ "$window_title" == "gnome-terminal" ]; then #https://www.reddit.com/r/linuxquestions/comments/pxv21n/shortcut_to_navigate_to_open_terminal/
         wmctrl -xFa gnome-terminal-server.Gnome-terminal
     else
-        #wmctrl -a "$window_title" 
+        wmctrl -a "$window_title" 
         #wmctrl -r "$window_title" -b toggle,fullscreen
         wmctrl -r "$window_title" -b add,maximized_verti,maximized_horz
     fi
