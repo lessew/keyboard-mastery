@@ -9,7 +9,7 @@ end)
 
 
 function launchOrFocus(key,applicationName)
-  modifiers = {'ctrl','cmd'} 
+  modifiers = {'ctrl','alt'} 
   hs.alert.show(applicationName)
 
   hs.hotkey.bind(modifiers, key, function()
