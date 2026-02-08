@@ -14,6 +14,6 @@ $GDRIVE
 - edit url/search - alt-l
 - next tab - ctrl-tab
 - previous tab -ctrl-shift-tab
-- fw history - alt-left 
-- bw history - alt-right
+- fw history - cmd-left 
+- bw history - cmd-right
 
