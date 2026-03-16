@@ -8,8 +8,11 @@ local function showCheatsheet()
 	local message = [[
     Hammerspoon Cheatsheet
     ----------------------
-    Obsidian - Navigate back/forward: apple <- / apple ->
-    Obsidian - Next tab: ctr-tab  
+    Obsidian/Vivaldi/Chrome
+    	Navigate back/forward: apple <- / apple ->
+	Next tab: ctr-tab
+    Chrome
+    	Shortcut overview: shift /
     ]]
 	hs.alert.show(message, 2)
 end
