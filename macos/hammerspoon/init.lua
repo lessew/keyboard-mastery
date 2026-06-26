@@ -6,6 +6,16 @@ end)
 
 local function showCheatsheet()
 	local message = [[
+    Tmux
+    ----------------------
+    New window C-b c
+    Move to window n C-b n
+    Split window horizontally C-b %
+    Split window vertically C-b "
+    Close window
+    Print current pane C-b q
+    Next pane C-b o
+
     Hammerspoon Cheatsheet
     ----------------------
     Obsidian/Vivaldi/Chrome
